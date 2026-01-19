@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>CV & Surat Lamaran – Tri Rostinati</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- html2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    @page {
+  size: A4;
+  margin: 30mm;
+}
+
+    .surat {
+      font-family: "Times New Roman", serif;
+      font-size: 12pt;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-100 text-slate-800">
+
+<!-- ================= CONTROLS ================= -->
+<div class="max-w-5xl mx-auto mt-6 flex justify-between items-center">
+  <div class="space-x-2">
+    <button onclick="showCV()" class="px-4 py-2 bg-slate-800 text-white rounded">
+      CV
+    </button>
+    <button onclick="showSurat()" class="px-4 py-2 bg-slate-600 text-white rounded">
+      Surat Lamaran
+    </button>
+  </div>
+
+  <button onclick="downloadPDF()" class="px-4 py-2 bg-emerald-600 text-white rounded">
+    Download PDF
+  </button>
+</div>
+
+<!-- ================= PRINT AREA ================= -->
+<div id="print-area" class="max-w-5xl mx-auto my-6">
+
+<!-- ================= CV ================= -->
+<section id="cv-view" class="bg-white shadow-lg rounded-xl overflow-hidden">
+
+  
+  <!-- HEADER -->
+  <header class="bg-slate-800 text-white p-10 text-center">
+    <div class="flex justify-center mb-4">
+      <div class="w-32 h-32 rounded-full border-4 border-slate-300 overflow-hidden bg-white">
+        <img src="Tanti Foto.jpg" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <h1 class="text-3xl font-bold">Tri Rostinati</h1>
+    <p class="text-sm text-slate-300">Fullstack Developer</p>
+  </header>
+
+  <!-- CONTENT -->
+  <div class="grid grid-cols-3 gap-4 p-8 text-sm">
+
+    <!-- LEFT -->
+    <aside class="col-span-1 space-y-5 pl-16">
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Kontak</h2>
+        <p>📞 0895 3921 60450</p>
+        <p>✉️ trirostinati@gmail.com</p>
+        <p>📍 Jakarta, Indonesia</p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Keterampilan</h2>
+        <ul class="list-disc ml-4 space-y-1">
+          <li>HTML, CSS, JavaScript</li>
+          <li>React + Vite</li>
+          <li>TailwindCSS</li>
+          <li>Firebase (Auth & RTDB)</li>
+          <li>Git & VS Code</li>
+          <li>Bahasa Inggris</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Pendidikan</h2>
+        <p><strong>S.Kom</strong><br>MI Gunadarma – 1986</p>
+        <p class="mt-2"><strong>M.TI</strong><br>Binus – 2018</p>
+      </section>
+    </aside>
+
+    <!-- RIGHT -->
+    <main class="col-span-2 space-y-5 pr-12">
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Ringkasan Profil</h2>
+        <p>
+          Seorang ASN dengan NIP.197304021999032002, dan juga berprofesi sebagai
+          Fullstack Developer pemula, yang aktif mengembangkan aplikasi berbasis web
+          menggunakan React, TailwindCSS, dan Firebase. Memiliki ketertarikan pada
+          pengembangan sistem internal dan aplikasi berbasis data.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Pengalaman Kerja</h2>
+        <p class="font-semibold">Pelaksana – Subdit Bingas</p>
+        <p class="text-slate-500 text-xs">2024 – 2025</p>
+        <ul class="list-disc ml-5 mb-3">
+          <li>Panitia Koordinator Bimtek PPIH Arab Saudi</li>
+          <li>Panitia Training of Trainer PPIH</li>
+          <li>Supervisor Bimtek PPIH</li>
+          <li>Sebagai PPIH Arab Saudi</li>
+
+        </ul>
+
+        <p class="font-semibold">Pelaksana – Subdit Pengelola Keuangan</p>
+        <p class="text-slate-500 text-xs">2023 – 2024</p>
+        <ul class="list-disc ml-5">
+          <li>Mengelola Presensi Direktorat</li>
+          <li>Mengelola Uang Makan</li>
+          <li>Mengelola Tunjangan Kinerja</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="font-semibold border-b pb-1 mb-2">Proyek</h2>
+        <ul class="list-disc ml-5">
+          <li>Aplikasi POS berbasis React & Firebase</li>
+          <li>Landing Page PokeAPI</li>
+          <li>Membangun Website Figma</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</section>
+
+<!-- ================= SURAT ================= -->
+<section id="surat-view" class="hidden bg-white shadow-lg rounded-xl p-8 surat">
+
+  <div class="text-right mb-6">Jakarta, 19 Januari 2026</div>
+
+  <p>Kepada Yth,</p>
+  <p class="font-bold">Sekretaris Jenderal Kementerian Haji dan Umrah</p>
+  <p class="mb-4">Jl. M.H. Thamrin No.6, Kebon Sirih, Jakarta 10310</p>
+
+  <p class="italic mb-2">Assalamu’alaikum Wr. Wb.</p>
+  <p class="mb-4">Dengan hormat,</p>
+
+  <p class="text-justify indent-8 mb-4">
+    Sehubungan dengan adanya transisi Pegawai Kementerian Agama RI ke
+    Kementerian Haji dan Umrah RI, dengan ini saya mengajukan permohonan
+    untuk dapat dipertimbangkan sebagai bagian dari tim kerja. Saya yang 
+    bertanda tangan di bawah ini :
+  </p>
+
+  <table class="ml-8 mb-4">
+    <tr><td class="w-44">Nama</td><td>: Tri Rostinati, S.Kom, M.TI</td></tr>
+    <tr><td>NIP</td><td>: 197304021999032002</td></tr>
+    <tr><td>Umur</td><td>: 52 Tahun</td></tr>
+    <tr><td>Alamat</td><td>: Jl. Swakarya Bawah No.32 Rt.6/9, Pondok Labu, Cilandak, Jakarta 12450</td></tr>
+    <tr><td>No.</td><td>: 0895-3921-60450</td></tr>
+    <tr><td>Pendidikan</td><td>: S2 MTI Universitas Bina Nusantara</td></tr>
+  </table>
+
+  <p class="text-justify indent-8 mb-6">
+    Demikian surat lamaran ini saya sampaikan. Atas perhatian Bapak/Ibu,
+    saya ucapkan terima kasih.
+  </p>
+
+  <div class="text-left mb-2">
+    <p class="italic">Wassalamu’alaikum Wr. Wb.</p>
+    <p class="mb-2">Hormat saya,</p>
+    <br><br>
+    <p class="font-semibold">Tri Rostinati, S.Kom, M.TI</p>
+  </div>
+
+</section>
+
+</div>
+
+<script>
+function showCV() {
+  document.getElementById("cv-view").classList.remove("hidden");
+  document.getElementById("surat-view").classList.add("hidden");
+}
+
+function showSurat() {
+  document.getElementById("surat-view").classList.remove("hidden");
+  document.getElementById("cv-view").classList.add("hidden");
+}
+
+function downloadPDF() {
+  html2pdf().set({
+    margin: [20, 24, 24, 24],
+    filename: "Dokumen_Tri_Rostinati.pdf",
+    html2canvas: { scale: 2 },
+    jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
+  }).from(document.getElementById("print-area")).save();
+}
+</script>
+
+</body>
+</html>
