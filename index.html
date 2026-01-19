@@ -58,14 +58,14 @@
       </div>
     </div>
     <h1 class="text-3xl font-bold">Tri Rostinati</h1>
-    <p class="text-sm text-slate-300">Fullstack Developer</p>
+    <p class="text-sm text-slate-300">PNS~Fullstack Developer</p>
   </header>
 
   <!-- CONTENT -->
-  <div class="grid grid-cols-3 gap-4 p-8 text-sm">
+  <div class="grid grid-cols-3 gap-6 p-8 text-sm">
 
     <!-- LEFT -->
-    <aside class="col-span-1 space-y-5 pl-16">
+    <aside class="col-span-1 space-y-7 pl-12">
       <section>
         <h2 class="font-semibold border-b pb-1 mb-2">Kontak</h2>
         <p>📞 0895 3921 60450</p>
@@ -93,7 +93,7 @@
     </aside>
 
     <!-- RIGHT -->
-    <main class="col-span-2 space-y-5 pr-12">
+    <main class="col-span-2 space-y-6">
       <section>
         <h2 class="font-semibold border-b pb-1 mb-2">Ringkasan Profil</h2>
         <p>
@@ -138,7 +138,7 @@
 </section>
 
 <!-- ================= SURAT ================= -->
-<section id="surat-view" class="hidden bg-white shadow-lg rounded-xl p-8 surat">
+<section id="surat-view" class="hidden bg-white shadow-lg rounded-xl px-12 surat">
 
   <div class="text-right mb-6">Jakarta, 19 Januari 2026</div>
 
@@ -149,23 +149,37 @@
   <p class="italic mb-2">Assalamu’alaikum Wr. Wb.</p>
   <p class="mb-4">Dengan hormat,</p>
 
-  <p class="text-justify indent-8 mb-4">
+  <p class="text-justify indent-7 mb-4">
     Sehubungan dengan adanya transisi Pegawai Kementerian Agama RI ke
     Kementerian Haji dan Umrah RI, dengan ini saya mengajukan permohonan
     untuk dapat dipertimbangkan sebagai bagian dari tim kerja. Saya yang 
     bertanda tangan di bawah ini :
   </p>
 
-  <table class="ml-8 mb-4">
+  <table class="ml-6 mb-2">
     <tr><td class="w-44">Nama</td><td>: Tri Rostinati, S.Kom, M.TI</td></tr>
     <tr><td>NIP</td><td>: 197304021999032002</td></tr>
     <tr><td>Umur</td><td>: 52 Tahun</td></tr>
-    <tr><td>Alamat</td><td>: Jl. Swakarya Bawah No.32 Rt.6/9, Pondok Labu, Cilandak, Jakarta 12450</td></tr>
+    <tr><td>Alamat</td><td>: Jl. Swakarya Bawah No.32, Cilandak, Jakarta 12450</td></tr>
     <tr><td>No.</td><td>: 0895-3921-60450</td></tr>
-    <tr><td>Pendidikan</td><td>: S2 MTI Universitas Bina Nusantara</td></tr>
+    <tr><td>Pendidikan Terakhir</td><td>: S2 MTI Universitas Bina Nusantara</td></tr>
+
+    <tr>
+  <td>Github CV</td>
+  <td>:
+    <a
+      href="https://trirostinati.github.io/Lamaran-CV-Kemenhaj/"
+      target="_blank"
+      class="text-blue-700 underline break-all"
+    >
+      https://trirostinati.github.io/Lamaran-CV-Kemenhaj/
+    </a>
+  </td>
+</tr>
+
   </table>
 
-  <p class="text-justify indent-8 mb-6">
+  <p class="text-justify indent-7 mb-6">
     Demikian surat lamaran ini saya sampaikan. Atas perhatian Bapak/Ibu,
     saya ucapkan terima kasih.
   </p>
@@ -194,7 +208,7 @@ function showSurat() {
 
 function downloadPDF() {
   html2pdf().set({
-    margin: [20, 24, 24, 24],
+    margin: [20, 14, 18, 14],
     filename: "Dokumen_Tri_Rostinati.pdf",
     html2canvas: { scale: 2 },
     jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }
